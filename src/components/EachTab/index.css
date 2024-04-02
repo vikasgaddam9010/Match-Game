@@ -12,3 +12,12 @@
 .btn-bottom {
   border-bottom: 2px solid #fec653;
 }
+@media (max-width: 576px) {
+  .btn-li {
+    font-size: 10px;
+    width: 120px;
+  }
+  .each-li {
+    width: 90px;
+  }
+}
