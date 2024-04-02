@@ -9,3 +9,10 @@
   width: 156px;
   height: 160px;
 }
+
+@media (max-width: 576px) {
+  .each-thumb-image {
+    width: 100px;
+    height: 100px;
+  }
+}
