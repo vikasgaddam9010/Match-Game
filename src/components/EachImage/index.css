@@ -1,0 +1,11 @@
+* {
+  margin: 0px;
+}
+.btn-each-image-li {
+  border: 0px solid;
+  background-color: transparent;
+}
+.each-thumb-image {
+  width: 156px;
+  height: 160px;
+}

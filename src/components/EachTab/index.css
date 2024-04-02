@@ -1,0 +1,14 @@
+.btn-li {
+  background-color: transparent;
+  border: 0px solid;
+  color: #ffffff;
+  padding: 10px;
+  width: 150px;
+  margin: 20px;
+}
+.select-css {
+  color: #fec653;
+}
+.btn-bottom {
+  border-bottom: 2px solid #fec653;
+}
