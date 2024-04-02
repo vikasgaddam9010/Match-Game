@@ -9,9 +9,20 @@ class MatchGame extends Component {
     selectedItem: this.props.imagesList[0],
     selectedImage: this.props.imagesList[0].imageUrl,
     score: 0,
+    time: 60,
     isSelectedRightImage: true,
   }
-
+  componentDidMount() {
+    this.timerId = setInterval(this.timeDecrement, 1000)
+  }
+  timeDecrement = () => {
+    if(this.state.time !== 0){
+      this.setState(prevState => ({time: prevState.time - 1}))
+    }else{
+      this.setState({isSelectedRightImage: false})
+    }
+    
+  }
   passTabId = tabId => {
     this.setState({whichtabIsSelected: tabId})
   }
@@ -38,16 +49,18 @@ class MatchGame extends Component {
       selectedItem: this.props.imagesList[0],
       selectedImage: this.props.imagesList[0].imageUrl,
       score: 0,
+      time: 60,
       isSelectedRightImage: true,
     })
     clearInterval(this.timerId)
+    this.timerId = setInterval(this.timeDecrement, 1000)
   }
 
   render() {
     const {tabsList, imagesList} = this.props
     const {
       whichtabIsSelected,
-      selectedItem,
+      time,
       selectedImage,
       isSelectedRightImage,
       score,
@@ -76,7 +89,7 @@ class MatchGame extends Component {
                 alt="timer"
                 className="img-timer"
               />
-              <p className="score-time-css">0 sec</p>
+              <p className="score-time-css">{time} sec</p>
             </div>
           </li>
         </ul>
